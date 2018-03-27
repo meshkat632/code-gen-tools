@@ -1,41 +1,19 @@
-plugins {
-    id 'com.gradle.plugin-publish' version '0.9.9'
-    //id 'java-gradle-plugin'
-}
-pluginBundle {
-    website = 'https://github.com/reaster/schema-gen'
-    vcsUrl = 'https://github.com/reaster/schema-gen'
-    plugins {
-        gen {
-            id = 'com.javagen.schema-gen'
-            displayName = 'Schema Gen Plugin'
-            description = 'Generates Java, Kotlin and Swift 4 model, validation and marshalling code from XML Schema (.xsd) files'
-            tags = ['schema', 'xml','xsd', 'json', 'jaxb', 'java', 'kotlin', 'swift', 'generator', 'plugin', 'jackson']
-            version = '0.9.1'
-        }
-    }
-}
-group 'com.javagen'
-version '0.9.1'
+group = 'org.codgen.tools'
+version = '1.0.0-SNAPSHOT'
 
 apply plugin: 'groovy'
 apply plugin: 'maven'
+apply plugin: 'eclipse'
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
+sourceCompatibility = 1.7
 
 dependencies {
     compile gradleApi()
-    //compile localGroovy()
-    compile 'org.codehaus.groovy:groovy-all:2.4.11'
-    //compile 'com.gradle.publish:plugin-publish-plugin:0.9.9'
-    testCompile 'xmlunit:xmlunit:1.6'
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.0'
-    testCompile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.0'
-    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+
+    testCompile 'junit:junit:4.12'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
 }
