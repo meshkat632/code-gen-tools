@@ -1,0 +1,14 @@
+buildscript {
+	repositories {
+		mavenLocal()
+	}
+	dependencies {
+		classpath 'org.codgen.tools:generators:1.0.0-SNAPSHOT'
+	}
+}
+
+apply plugin: 'GeneratorPlugin'
+
+codgenSetting {
+	message = "Hi from an extension"
+}
